@@ -13,22 +13,37 @@ import { HttpModule } from '@angular/http';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { SimpleComponent } from './simple/simple.component';
+import {SimpleServiceService} from "./simple/simple-service.service";
+import { GreetDirective } from './greet.directive';
+import {NgZorroAntdModule} from "ng-zorro-antd";
+// import { NgxComponent } from './ngx/ngx.component';
+
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent,
+    SimpleComponent,
+    GreetDirective,
+    // NgxComponent,
+    BootstrapComponent,
+    FormComponent
   ],
   imports: [
+
     HttpModule,
     BrowserModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgZorroAntdModule.forRoot()
   ],
-  providers: [HeroService],
+  providers: [HeroService, SimpleServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

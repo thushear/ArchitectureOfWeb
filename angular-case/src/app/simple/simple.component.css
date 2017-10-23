@@ -1,0 +1,15 @@
+:host { margin: 10px; }
+
+.mousedown { border: 2px solid green; }
+
+input:focus { font-weight: bold; outline: none;}
+
+input.ng-invalid {
+  border: 3px solid red;
+}
+input.ng-valid {
+  border: 3px solid green;
+}
+select.ng-invalid + label:after {
+  content: '<-- 请选择版本!'
+}

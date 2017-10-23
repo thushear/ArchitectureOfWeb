@@ -1,0 +1,59 @@
+<p>
+  simple works!
+</p>
+{{message}}
+<hr>
+<input #myInput type="text" value="{{message}}" [(ngModel)]="message"  [ngClass]="{mousedown:isMousedown}" (mousedown)="isMousedown=true" (mouseup)="isMousedown=false" (mouseleave)="isMousedown=false"/>
+<button  (click)="update.emit({text:myInput.value})">click me !</button>
+
+<div [ngStyle]="{color:'white','background-color':'blue'}">
+  Uses fixed white text on blue background
+</div>
+<h2>hello world!</h2>
+<h2 greet="hello greet" author="thushear">hello angular</h2>
+<ng-template #tpl>
+  sad but true
+</ng-template>
+<hr>
+<h3>angular forms</h3><br/>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+  <fieldset ngModelGroup="user">
+  <input type="text" name="username"  required minlength="3" [(ngModel)]="username" #usermodel="ngModel"><br/>
+  <input type="password" ngModel name="password" required minlength="6"><br/>
+  </fieldset>
+  <button type="submit">submit</button><br/>
+  {{loginForm.value | json}}
+</form>
+{{username}}<br>
+{{usermodel.valid}} <br>
+invalid : {{usermodel.invalid}} -- dirty : {{usermodel.dirty}} -- touched : {{usermodel.touched}}
+
+<div *ngIf="usermodel.errors?.required">请输入用户名</div>
+<div *ngIf="usermodel.errors?.minlength">
+  用户名长度最短为{{usermodel.errors?.minlength.requiredLength}},当前长度为{{usermodel.errors?.minlength.actualLength}}
+</div>
+<br>
+Angular forms
+<form #theForm="ngForm">
+  Angular versions :
+  <div *ngFor="let version of versions;" >
+    <input
+      [attr.id]="version"
+       type="radio"
+      name="version"
+      [value]="version"
+      required
+      ngModel
+    />
+    <label [attr.for]="version">{{version}}</label>
+  </div>
+  <hr>
+  {{theForm.value | json}}
+</form>
+<hr>
+<form #selectedForm="ngForm">
+  <select name="version" [ngModel] = "versions[0]" required>
+    <option *ngFor="let version of versions;" [value]="version">{{version}}</option>
+  </select>
+  <hr>
+</form>

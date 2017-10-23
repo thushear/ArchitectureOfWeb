@@ -8,7 +8,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class HeroService {
 
-    private heroUrls = 'api/heroes';
+    private heroUrls = 'api/heroes2';
 
    private headers = new Headers({'Content-Type':'application/json'});
 
