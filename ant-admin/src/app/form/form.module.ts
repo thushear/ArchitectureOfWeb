@@ -1,15 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormComponent } from './form.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormComponent} from './form.component';
 import {FormRoutingModule} from "./form.routing";
 import {NgZorroAntdModule} from "ng-zorro-antd";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormAdvancedComponent} from "./form-advanced.component";
 
 @NgModule({
   imports: [
-    NgZorroAntdModule.forRoot(),
     FormRoutingModule,
-    CommonModule
+    CommonModule, ReactiveFormsModule, FormsModule, NgZorroAntdModule
   ],
-  declarations: [FormComponent]
+  declarations: [FormComponent,FormAdvancedComponent]
 })
-export class FormModule { }
+export class FormModule {
+}

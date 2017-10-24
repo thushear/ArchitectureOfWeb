@@ -19,6 +19,12 @@ const routes : Routes = [
       },
       {
         path:'form',loadChildren:'./../form/form.module#FormModule'
+      },
+      {
+        path:'change-detector',loadChildren:'./../change-detector/change-detector.module#ChangeDetectorModule'
+      },
+      {
+        path:'grid',loadChildren:'./../grid/grid.module#GridModule'
       }
     ]
   }

@@ -11,23 +11,9 @@ import {
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
-  validateForm: FormGroup;
-
-  _submitForm() {
-    for (const i in this.validateForm.controls) {
-      this.validateForm.controls[ i ].markAsDirty();
-    }
+  ngOnInit(): void {
   }
 
-  constructor(private fb: FormBuilder) {
-  }
 
-  ngOnInit() {
-    this.validateForm = this.fb.group({
-      userName: [ null, [ Validators.required ] ],
-      password: [ null, [ Validators.required ] ]
-    });
-  }
 
 }
