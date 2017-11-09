@@ -24,6 +24,9 @@ const routes : Routes = [
         path:'change-detector',loadChildren:'./../change-detector/change-detector.module#ChangeDetectorModule'
       },
       {
+        path:'echart',loadChildren:'./../echart/echart.module#EchartModule'
+      },
+      {
         path:'grid',loadChildren:'./../grid/grid.module#GridModule'
       }
     ]

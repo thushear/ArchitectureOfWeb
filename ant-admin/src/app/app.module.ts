@@ -8,7 +8,7 @@ import {AppRoutingModule} from "./app.routing";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
+import { AngularEchartsModule } from 'ngx-echarts';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +19,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpModule,
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularEchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
